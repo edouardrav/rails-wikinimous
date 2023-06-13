@@ -1,0 +1,11 @@
+<div class="text-right">
+  <%= link_to new_article_path, class: "btn" do %>
+    add article <i class="fa-solid fa-file"></i>
+  <% end %>
+</div>
+<% @articles.each do |article| %>
+  <div class="article">
+    <%= link_to article.title, article_path(article) %>
+    <p><%= article.content[0..100] %><% if article.content.length > 100 %>...<% end %></p>
+  </div>
+<% end %>
